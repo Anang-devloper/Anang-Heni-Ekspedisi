@@ -1,0 +1,117 @@
+/* Simple, modern design for Anang Heni Ekspedisi */
+:root{
+  --primary:#0b5cff;
+  --accent:#ff6b35;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --surface:#f8fafc;
+  --max-width:1200px;
+  --radius:10px;
+  --container-padding:1rem;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#0f172a;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+.container{
+  width:calc(100% - 2*var(--container-padding));
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:1rem;
+}
+
+/* Header */
+.site-header{
+  background:linear-gradient(90deg, #ffffff, #f7fbff);
+  border-bottom:1px solid #eef2f7;
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
+.brand-text{font-weight:700}
+.logo{width:40px;height:40px}
+.main-nav{display:flex;gap:1rem}
+.main-nav a{text-decoration:none;color:var(--muted);padding:.5rem;border-radius:6px}
+.main-nav a:hover{background:rgba(11,92,255,0.06);color:var(--primary)}
+.nav-toggle{display:none;background:none;border:0;font-size:1.4rem}
+
+/* Hero */
+.hero{
+  padding:3rem 0;
+  background:linear-gradient(180deg, rgba(11,92,255,0.04), transparent 60%);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:2rem;
+  align-items:start;
+}
+.lead{color:var(--muted);font-size:1.05rem;margin-top:.4rem}
+.hero-card{
+  background:var(--surface);
+  padding:1.2rem;
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(10,10,10,0.04);
+}
+.tracking-form input{width:100%;padding:.6rem;border-radius:8px;border:1px solid #e6eef8;margin-top:.4rem;margin-bottom:.6rem}
+.tracking-result{margin-top:.8rem;background:#fff;padding:.6rem;border-radius:6px;border:1px solid #eef2f7}
+
+/* Buttons */
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.outline{background:transparent;border-color:var(--primary);color:var(--primary)}
+.btn.primary:hover{filter:brightness(.98)}
+.btn.outline:hover{background:rgba(11,92,255,0.06)}
+
+/* Sections */
+.section{padding:2.2rem 0}
+.section-alt{background:#fbfdff;padding:2.2rem 0;border-top:1px solid #eef2f7;border-bottom:1px solid #eef2f7}
+h2{margin:0 0 .6rem}
+.muted{color:var(--muted)}
+.grid{display:grid;gap:1rem}
+.services-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.service{background:#fff;padding:1rem;border-radius:10px;border:1px solid #eef2f7}
+
+/* Forms */
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.form-grid .full{grid-column:1/-1}
+.form-actions{display:flex;justify-content:flex-end}
+
+/* Testimonials */
+.testimonial-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.testimonial{background:#fff;padding:1rem;border-radius:10px;border:1px solid #eef2f7;font-style:italic;color:var(--muted)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.contact-grid iframe{width:100%;height:220px;border:0;border-radius:8px}
+
+/* Footer */
+.site-footer{background:#07133b;color:#e6eef8;padding:1.5rem 0;margin-top:2rem}
+.footer-grid{display:grid;grid-template-columns:1fr 160px 160px;gap:1rem;align-items:start}
+.footer-links{list-style:none;padding:0;margin:0}
+.footer-links li{margin-bottom:.4rem}
+.footer-links a{color:inherit;text-decoration:none}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;align-items:stretch}
+  .main-nav{display:none}
+  .nav-toggle{display:block}
+  .header-inner{gap:.5rem}
+  .footer-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
