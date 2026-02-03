@@ -230,6 +230,202 @@
 
   <script src="/assets/script.js" defer></script>
 </body>
+</html>          <p class="lead">Pengiriman cepat, aman, dan terpercaya di seluruh Indonesia. Paket same-day, reguler, kargo, dan layanan fulfillment.</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#quote">Minta Penawaran</a>
+            <a class="btn outline" href="#tracking">Lacak Kiriman</a>
+          </div>
+          <ul class="trust-features">
+            <li>Asuransi pengiriman</li>
+            <li>Online tracking 24/7</li>
+            <li>Jaringan luas — nasional & internasional</li>
+          </ul>
+        </div>
+        <div class="hero-card" id="tracking">
+          <h3>Lacak Kiriman Anda</h3>
+
+          <!-- Demo mode notice (will be toggled by script if demo) -->
+          <div id="demo-banner" class="demo-banner" style="display:none">
+            <strong>Demo Mode:</strong> Sistem pelacakan berjalan dengan data demo. Tambahkan AfterShip API key di environment untuk pelacakan real.
+          </div>
+
+          <form id="tracking-form" class="tracking-form">
+            <label for="tn">Masukkan Nomor Resi</label>
+            <input id="tn" name="trackingNumber" placeholder="e.g. ANH1234567890" required />
+
+            <label for="courier">Kurir / Slug (opsional)</label>
+            <div style="display:flex;gap:.5rem;align-items:center;margin-top:.4rem">
+              <select id="courier" name="courier">
+                <option value="auto" selected>Auto-detect (rekomendasi)</option>
+                <option value="jne">jne</option>
+                <option value="tiki">tiki</option>
+                <option value="pos">pos</option>
+                <option value="sicepat">sicepat</option>
+                <option value="jnt">jnt</option>
+                <option value="wahana">wahana</option>
+                <option value="ninjavan">ninjavan</option>
+                <option value="other">Lainnya (ketik slug)</option>
+              </select>
+              <input id="courier-other" name="courierOther" placeholder="Masukkan slug kurir" style="display:none;flex:1" />
+            </div>
+
+            <div style="display:flex;gap:.5rem;align-items:center;margin-top:.8rem">
+              <button id="track-btn" class="btn primary" type="submit">Lacak</button>
+              <button id="track-demo-btn" class="btn outline" type="button">Lacak Demo</button>
+            </div>
+            <p class="small muted" style="margin-top:.5rem">Contoh resi: ANH1234567890. Jika AfterShip API key aktif, pelacakan akan real-time.</p>
+          </form>
+          <div id="tracking-result" class="tracking-result" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <h2>Layanan Kami</h2>
+      <p class="muted">Solusi pengiriman kami dirancang untuk memenuhi kebutuhan skala UKM hingga enterprise.</p>
+      <div class="grid services-grid">
+        <article class="service">
+          <h3>Same-Day Delivery</h3>
+          <p>Pengiriman hari yang sama untuk area terlayani. Cepat dan andal untuk kebutuhan mendesak.</p>
+        </article>
+        <article class="service">
+          <h3>Reguler Nasional</h3>
+          <p>Pengiriman reguler ke seluruh Indonesia dengan pelacakan lengkap.</p>
+        </article>
+        <article class="service">
+          <h3>Kargo & FTL</h3>
+          <p>Solusi kargo darat & laut untuk muatan besar, harga kompetitif untuk pengiriman massal.</p>
+        </article>
+        <article class="service">
+          <h3>Fulfillment & Warehousing</h3>
+          <p>Gudang rapi, picking & packing, integrasi toko online.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="quote" class="section section-alt container">
+      <h2>Permintaan Penawaran</h2>
+      <p class="muted">Isi formulir untuk mendapatkan estimasi biaya pengiriman dalam 1x24 jam.</p>
+      <form id="quote-form" class="form-grid" action="https://formsubmit.co/your-email@example.com" method="POST" novalidate>
+        <div>
+          <label for="name">Nama Lengkap</label>
+          <input id="name" name="name" required />
+        </div>
+        <div>
+          <label for="company">Perusahaan (opsional)</label>
+          <input id="company" name="company" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required />
+        </div>
+        <div>
+          <label for="phone">Telepon / WhatsApp</label>
+          <input id="phone" name="phone" required />
+        </div>
+        <div class="full">
+          <label for="origin">Asal Pengiriman</label>
+          <input id="origin" name="origin" required />
+          <small class="muted">Klik "Gunakan Lokasi Saya" untuk isi otomatis lokasi asal.</small>
+        </div>
+        <div class="full">
+          <label for="destination">Tujuan Pengiriman</label>
+          <div style="display:flex;gap:.5rem;align-items:center">
+            <input id="destination" name="destination" required />
+            <button id="use-location-btn" type="button" class="btn outline">Gunakan Lokasi Saya</button>
+          </div>
+          <small class="muted">Untuk akurasi, izinkan browser mengakses lokasi Anda.</small>
+        </div>
+        <div>
+          <label for="weight">Berat (kg)</label>
+          <input id="weight" name="weight" type="number" min="0.01" step="0.01" required />
+        </div>
+        <div>
+          <label for="serviceType">Jenis Layanan</label>
+          <select id="serviceType" name="serviceType">
+            <option>Reguler</option>
+            <option>Same-Day</option>
+            <option>Kargo</option>
+            <option>Fulfillment</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="notes">Catatan / Keterangan</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+
+        <div class="full form-actions">
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_autoresponse" value="Terima kasih! Permintaan Anda telah diterima. Kami akan menghubungi dalam 1x24 jam." />
+          <button class="btn primary">Kirim Permintaan</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section container">
+      <h2>Testimoni</h2>
+      <div class="grid testimonial-grid">
+        <blockquote class="testimonial">
+          "Pengiriman selalu on-time. Layanan customer care sangat membantu ketika butuh update." — Toko Baju Cantik
+        </blockquote>
+        <blockquote class="testimonial">
+          "Solusi fulfillment mereka memudahkan operasional kami. Rekomendasi." — E-Comm Co.
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt container contact">
+      <h2>Kontak</h2>
+      <div class="contact-grid">
+        <div>
+          <h3>Hubungi Kami</h3>
+          <p>Telepon: <a href="tel:+6281234567890">+62 812-3456-7890</a></p>
+          <p>Email: <a href="mailto:info@anangheniexpress.example">info@anangheniexpress.example</a></p>
+          <p>Alamat: Jl. Contoh No.123, Jakarta</p>
+
+          <p class="muted">Jam operasional: Senin–Jumat 08:00–18:00</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">Instagram</a> · <a href="#" aria-label="LinkedIn">LinkedIn</a> · <a href="#" aria-label="Facebook">Facebook</a>
+          </div>
+        </div>
+        <div>
+          <h3>Lokasi</h3>
+          <iframe title="Lokasi Anang Heni Express" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31690.0!2d106.7!3d-6.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNqKpMzcnNTYuOCJTIDEwNsKwNDEnMDQuMCJF!5e0!3m2!1sen!2sid!4v000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <img src="/assets/favicon.svg" alt="logo" class="logo" />
+          <span class="brand-text">Anang Heni Express</span>
+        </a>
+        <p class="muted">© <span id="year"></span> Anang Heni Express. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Produk & Layanan</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Layanan</a></li>
+          <li><a href="#quote">Penawaran</a></li>
+          <li><a href="#tracking">Lacak</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Bantuan</h4>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/script.js" defer></script>
+</body>
 </html><body>
   <header class="site-header">
     <div class="container header-inner">
